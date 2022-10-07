@@ -36,8 +36,11 @@ if (argv.j) {
 }
 
 
-
 const days = argv.d 
+
+
+
+
 
 if (days == 0) {
   console.log("today.")
