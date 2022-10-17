@@ -37,11 +37,6 @@ if (argv.j) {
 
 
 
-
-
-
-
-
 const days = argv.d 
 
 
