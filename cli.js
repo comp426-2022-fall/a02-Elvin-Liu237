@@ -20,27 +20,25 @@ if (argv.h) {
 }
 
 //timezone
-const timezone = argv.z || moment.timezone.guess()
+var timezone = args.z || moment.timezone.guess()
 
-const latitude = argv.n
-const longitude = argv.e
+var latitude = args.n
+var longitude = args.e
 
-if (argv.n) {
-  latitude = argv.n;
+if (args.n) {
+  latitude = args.n;
 }
-if (argv.s) {
-  latitude = argv.s * -1;
+if (args.s) {
+  latitude = args.s * -1;
 }
-if (argv.w) {
-  longitude = argv.w * -1;
+if (args.w) {
+  longitude = args.w * -1;
 }
-if (argv.e) {
-  longitude =argv.e;
+if (args.e) {
+  longitude =args.e;
 }
 // Make a request
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m' + 'latitude=' + latitude + '&longitude=' + longitude + '&hourly=remerature_2m' + timezone);
-
-
 
 // Get data from request
 const data = await response.json();
@@ -52,7 +50,7 @@ if (argv.j) {
 
 }
 
-const day = 1;
+var day = args.d;
 
 
 //check if there is precipitation for the day
