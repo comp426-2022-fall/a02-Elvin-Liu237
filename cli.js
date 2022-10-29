@@ -20,7 +20,7 @@ if (argv.h) {
 }
 
 //timezone
-const timezone = moment.tz.guess()
+const timezone = args.z || moment.timezone.guess()
 
 const latitude = argv.n
 const longitude = argv.e
@@ -55,14 +55,11 @@ if (argv.j) {
 const day = 1;
 
 
-
-
-
 //check if there is precipitation for the day
- if (data.daily.preciptiation_hous[day] = 0) {
+ if (data.daily.preciptiation_hours[day] == 0) {
    console.log("No need to wear galoshes")
  } else {
-   console.log("Weat your galoshes ")
+   console.log("Wear your galoshes")
  }
 
 
