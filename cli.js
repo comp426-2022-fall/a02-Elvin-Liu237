@@ -26,16 +26,16 @@ const latitude = argv.n
 const longitude = argv.e
 
 if (argv.n) {
-  latitude = args.n;
+  latitude = argv.n;
 }
 if (argv.s) {
-  latitude = args.s * -1;
+  latitude = argv.s * -1;
 }
-if (args.w) {
-  longitude = args.w * -1;
+if (argv.w) {
+  longitude = argv.w * -1;
 }
-if (args.e) {
-  longitude =args.e;
+if (argv.e) {
+  longitude =argv.e;
 }
 // Make a request
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m' + 'latitude=' + latitude + '&longitude=' + longitude + '&hourly=remerature_2m' + timezone);
