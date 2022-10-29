@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import minimist from "minimist"
-import moment from "node-fetch"
-import fetch from "moment-timezone"
+import minimist from "minimist";
+import moment from "node-fetch";
+import fetch from "moment-timezone";
 
 
 //var argv = minimist(process.argv.slice(2));
@@ -21,22 +21,21 @@ if (args.h) {
 }
 
 //timezone
-const tz = args.z || moment.tz.guess();
+const timezoned = args.z || moment.tz.guess();
 var latitude = args.n || (args.s *-1);
 var longitude = args.e || (args.w * -1);
 
 
 // Make a request
-const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m' + 'latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m=' + tz);
+// 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m'
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=' + timezoned);
 
 // Get data from request
 const data = await response.json();
-
 //print data
 if (args.j) {
     console.log(data);
     process.exit(0);
-
 }
 
 var day = args.d;
