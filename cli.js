@@ -8,7 +8,7 @@ import fetch from "moment-timezone"
 //var argv = minimist(process.argv.slice(2));
 const args = minimist(process.argv.slice(2));
 
-if (argv.h) {
+if (args.h) {
   
     console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE")
     console.log("-h            Show this help message and exit.")
@@ -45,7 +45,7 @@ const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52
 const data = await response.json();
 
 //print data
-if (argv.j) {
+if (args.j) {
     console.log(data);
     process.exit(0);
 
