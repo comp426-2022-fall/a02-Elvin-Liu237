@@ -42,7 +42,7 @@ var day = args.d;
 
 
 //check if there is precipitation for the day
- if (data.daily.preciptiation_hours[day] == 0) {
+ if (data.daily.precipitation_hours[day] == 0) {
    console.log("No need to wear galoshes")
  } else {
    console.log("Wear your galoshes")
