@@ -5,7 +5,8 @@ import moment from "node-fetch"
 import fetch from "moment-timezone"
 
 
-var argv = minimist(process.argv.slice(2));
+//var argv = minimist(process.argv.slice(2));
+const argv = minimist(process.argv.slice(2));
 
 if (argv.h) {
   
