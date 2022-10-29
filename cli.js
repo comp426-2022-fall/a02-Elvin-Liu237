@@ -27,8 +27,8 @@ var longitude = args.e || (args.w * -1);
 
 
 // Make a request
-// 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m'
-const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=' + timezoned);
+// https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&hourly=temperature_2m,precipitation,windspeed_10m,temperature_80m&daily=precipitation_hours&temperature_unit=fahrenheit&windspeed_unit=ms&precipitation_unit=inch&timezone=America%2FNew_York
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,precipitation,windspeed_10m,temperature_80m&daily=precipitation_hours&temperature_unit=fahrenheit&windspeed_unit=ms&precipitation_unit=inch&timezone=' + timezoned);
 
 // Get data from request
 const data = await response.json();
