@@ -20,7 +20,7 @@ if (argv.h) {
 }
 
 //timezone
-const timezone = args.z || moment.timezone.guess()
+const timezone = argv.z || moment.timezone.guess()
 
 const latitude = argv.n
 const longitude = argv.e
