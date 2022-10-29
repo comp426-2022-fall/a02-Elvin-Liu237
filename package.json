@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A02 comp426",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
   },
@@ -10,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/comp426-2022-fall/a02-Elvin-Liu237.git"
   },
-  "author": "Elvin Liu",
+  "author": "Elvin-Liu237",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/comp426-2022-fall/a02-Elvin-Liu237/issues"
