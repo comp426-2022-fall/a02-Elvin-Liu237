@@ -21,25 +21,13 @@ if (args.h) {
 }
 
 //timezone
-const timezone = args.z || moment.timezone.guess()
+const tz = args.z || moment.tz.guess();
+var latitude = args.n || (args.s *-1);
+var longitude = args.e || (args.w * -1);
 
-var latitude = args.n
-var longitude = args.e
 
-if (args.n) {
-  latitude = args.n;
-}
-if (args.s) {
-  latitude = args.s * -1;
-}
-if (args.w) {
-  longitude = args.w * -1;
-}
-if (args.e) {
-  longitude =args.e;
-}
 // Make a request
-const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m' + 'latitude=' + latitude + '&longitude=' + longitude + '&hourly=remerature_2m' + timezone);
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m' + 'latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m=' + tz);
 
 // Get data from request
 const data = await response.json();
