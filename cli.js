@@ -22,12 +22,13 @@ if (args.h) {
 
 //timezone
 const timezoned = args.z || moment.tz.guess();
+
+// create cthe latitude and longitude variables
 var latitude = args.n || (args.s *-1);
 var longitude = args.e || (args.w * -1);
 
 
 // Make a request
-// https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&hourly=temperature_2m,precipitation,windspeed_10m,temperature_80m&daily=precipitation_hours&temperature_unit=fahrenheit&windspeed_unit=ms&precipitation_unit=inch&timezone=America%2FNew_York
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,precipitation,windspeed_10m,temperature_80m&daily=precipitation_hours&temperature_unit=fahrenheit&windspeed_unit=ms&precipitation_unit=inch&timezone=' + timezoned);
 
 // Get data from request
@@ -38,6 +39,7 @@ if (args.j) {
     process.exit(0);
 }
 
+//create a day variable to check the next days precipitation levels
 var day = args.d || 1;
 
 
